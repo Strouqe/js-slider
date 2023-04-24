@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 55%;
+  }
+}
+
+
+
+.slider {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  width: 80rem;
+  height: 75rem;
+  overflow: hidden;
+  padding: 2rem auto;
+  margin: 10rem auto;
+
+  background-color: #f7f7f7;
+
+  @media only screen and (max-width: 900px) {
+    width: 90vw;
+    height: fit-content;
+    padding: 3rem;
+  }
+}
+.slider__img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 95%; 
+  height: 75%;
+  margin: 0 auto;
+ 
+}
+
+.slider__img img {
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+
+  object-fit: contain;
+  transition: all 0.5s;
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;
+
+  /* @media only screen and (max-width: 900px) {
+    width: 100%;
+  } */
+}
+
+.slider__btns {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 80%;
+  height: 10rem;
+  margin: auto;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+
+  }
+}
+
+.slider__btn {
+  width: fit-content; 
+  height: fit-content;
+  background-color: rgba(41, 152, 255, 0.9);
+  color: #fff;
+  padding: 2.2rem 4rem;
+  border: none;
+  border-radius: 6px;
+  margin: auto;
+  /* margin-bottom: 6rem; */
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .5s;
+
+  @media only screen and (max-width: 900px) {
+    padding: 1.8rem 4rem;
+    margin-top: 4rem;
+  }
+}
+.slider__btn:hover {
+  background-color: rgba(41, 152, 255, 0.7);
+  transform: translateY(-.3rem);
+}
+.slider__btn:active {
+  transform: translateY(-.1rem);
+}
+
+@keyframes moveInLeftToRight {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-4rem) rotateY(-180deg);
+  }
+  55% {
+    transform: translateY(-2rem) rotateY(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+.animation {
+  animation: moveInLeftToRight .8s linear;
+  animation-iteration-count: 1;
+}
